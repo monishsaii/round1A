@@ -23,4 +23,9 @@ This solution extracts structured outlines from PDF documents by analyzing text 
 - **Standard Python libraries**: re, json, collections
 
 ## Build and Run
-
+- docker build --no-cache -t pdf-outline-extractor:v1 .
+- docker run --rm \
+  -v $(pwd)/input:/app/input \
+  -v $(pwd)/output:/app/output \
+  --network none \
+  pdf-outline-extractor:v1
